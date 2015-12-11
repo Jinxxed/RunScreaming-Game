@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameManager : MonoBehaviour {
 
 	public Maze mazePrefab;
+    public Camera mainCamera;
 
 	private Maze mazeInstance;
 
@@ -17,9 +18,37 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+    public void switchCamera()
+    {
+        if (mazeInstance == null)
+        {
+            throw new System.Exception("Maze is null!");
+            return;
+        }
+        GameObject fps = FindObjectOfType<FirstPersonController>().gameObject;
+        if (fps == null)
+        {
+            throw new System.Exception("Camera not found!");
+        }
+        if(mainCamera.enabled)
+        {
+            fps.GetComponentInChildren<Camera>().enabled = true;
+            mainCamera.enabled = false;
+            mainCamera.gameObject.SetActive(false);
+
+        }
+        else
+        {
+            mainCamera.enabled = true;
+            mainCamera.gameObject.SetActive(true);
+            fps.GetComponentInChildren<Camera>().enabled = false;
+        }
+        
+    }
+
 	private void BeginGame () {
 		mazeInstance = Instantiate(mazePrefab) as Maze;
-		StartCoroutine(mazeInstance.Generate());
+		mazeInstance.Generate();
 	}
 
 	private void RestartGame () {
