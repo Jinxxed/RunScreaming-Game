@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void Update () {
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.Escape)) {
 			RestartGame();
 		}
 	}
@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void RestartGame () {
-		StopAllCoroutines();
 		Destroy(mazeInstance.gameObject);
 		BeginGame();
 	}

@@ -7,12 +7,14 @@ public class Maze : MonoBehaviour
 {
 
     public GameObject goalPrefab;
+    private GameObject goalObj;
 
     public IntVector2 size;
 
     public MazeCell cellPrefab;
 
     public FirstPersonController fpcPrefab;
+    private FirstPersonController fpcObj;
 
     public float generationStepDelay;
 
@@ -29,6 +31,12 @@ public class Maze : MonoBehaviour
         {
             return new IntVector2(Random.Range(0, size.x), Random.Range(0, size.z));
         }
+    }
+
+    public void OnDestroy()
+    {
+        Destroy(this.goalObj);
+        Destroy(this.fpcObj.gameObject);
     }
 
     public bool ContainsCoordinates(IntVector2 coordinate)
@@ -55,18 +63,18 @@ public class Maze : MonoBehaviour
 
         LinkedList<MazeCell> path = new LinkedList<MazeCell>();
         MazeCell goal = calculatePaths(start, path);
-        while(goal == null)
+        while (goal == null)
         {
             path.Clear();
             start = this.GetCell(this.RandomCoordinates);
             goal = calculatePaths(start, path);
         }
 
-        FirstPersonController fpc = Instantiate(fpcPrefab) as FirstPersonController;
-        fpc.transform.localPosition = start.transform.localPosition;
-        
-        GameObject goalObject = Instantiate(goalPrefab) as GameObject;
-        goalObject.transform.localPosition = goal.transform.localPosition;
+        fpcObj = Instantiate(fpcPrefab) as FirstPersonController;
+        fpcObj.transform.localPosition = start.transform.localPosition;
+
+        goalObj = Instantiate(goalPrefab) as GameObject;
+        goalObj.transform.localPosition = goal.transform.localPosition;
 
     }
 
