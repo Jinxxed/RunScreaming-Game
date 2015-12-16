@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
         if (mazeInstance == null)
         {
             throw new System.Exception("Maze is null!");
-            return;
+            
         }
         GameObject fps = FindObjectOfType<FirstPersonController>().gameObject;
         if (fps == null)
