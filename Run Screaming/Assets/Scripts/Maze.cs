@@ -132,7 +132,17 @@ public class Maze : MonoBehaviour
                 activeCells.Add(neighbor);
             }
             else {
-                CreateWall(currentCell, neighbor, direction);
+                if(Random.value < 0.85)
+                {
+                    
+                    CreateWall(currentCell, neighbor, direction);
+                }
+                else
+                {
+                    Debug.Log("No Wall");
+                    CreatePassage(currentCell, neighbor, direction);
+                }
+                
             }
         }
         else {
