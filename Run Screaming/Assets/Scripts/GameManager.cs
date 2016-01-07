@@ -19,10 +19,12 @@ public class GameManager : MonoBehaviour
         RenderTexture rt = new RenderTexture(width, height, 24);
 
         mainCamera.targetTexture = rt;
-        mainCamera.Render();
-        mainCamera.targetTexture = null;
+
 
         RenderTexture.active = rt;
+
+        mainCamera.Render();
+        mainCamera.targetTexture = null;
 
         Texture2D screen = new Texture2D(width, height);
         screen.ReadPixels(new Rect(0, 0, width, height), 0, 0);

@@ -74,7 +74,9 @@ public class Maze : MonoBehaviour
         fpcObj.transform.localPosition = start.transform.localPosition;
 
         goalObj = Instantiate(goalPrefab) as GameObject;
-        goalObj.transform.localPosition = goal.transform.localPosition;
+        goalObj.transform.localPosition = goal.transform.localPosition + 0.6f * Vector3.up;
+
+        goal.setGoal();
 
     }
 

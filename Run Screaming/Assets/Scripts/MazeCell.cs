@@ -8,11 +8,18 @@ public class MazeCell : MonoBehaviour {
 
 	private int initializedEdgeCount;
 
+    private bool isGoal = false;
+
 	public bool IsFullyInitialized {
 		get {
 			return initializedEdgeCount == MazeDirections.Count;
 		}
 	}
+
+    public void setGoal()
+    {
+        this.isGoal = true;
+    }
 
 	public MazeDirection RandomUninitializedDirection {
 		get {
