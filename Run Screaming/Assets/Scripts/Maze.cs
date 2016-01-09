@@ -25,6 +25,11 @@ public class Maze : MonoBehaviour
 
     private MazeCell start;
 
+    public void disableGoalObj()
+    {
+        this.goalObj.SetActive(false);
+    }
+
     public IntVector2 RandomCoordinates
     {
         get
