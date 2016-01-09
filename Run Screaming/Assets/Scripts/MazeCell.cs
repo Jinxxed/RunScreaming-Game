@@ -44,4 +44,9 @@ public class MazeCell : MonoBehaviour {
 		edges[(int)direction] = edge;
 		initializedEdgeCount += 1;
 	}
+
+    public override string ToString()
+    {
+        return this.gameObject.transform.localPosition.ToString();
+    }
 }

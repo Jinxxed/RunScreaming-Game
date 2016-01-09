@@ -44,9 +44,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 435658}
   - 143: {fileID: 14329984}
-  - 114: {fileID: 11440410}
   - 54: {fileID: 5482352}
   - 82: {fileID: 8288252}
+  - 114: {fileID: 11455320}
   m_Layer: 0
   m_Name: FPSController 1
   m_TagString: Untagged
@@ -267,7 +267,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11440410
+--- !u!114 &11455320
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -275,15 +275,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 194844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ec5cf00ca181d45a42ba1870e148c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 10ec57bd6e2bf674baf70534691ad937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 0
-  m_WalkSpeed: 1
-  m_RunSpeed: 2
-  m_RunstepLenghten: 0.7
-  m_JumpSpeed: 10
-  m_StickToGroundForce: 10
+  m_WalkSpeed: 2
+  m_RunSpeed: 5
+  m_RunstepLenghten: 0
+  m_JumpSpeed: 1
+  m_StickToGroundForce: 5
   m_GravityMultiplier: 2
   m_MouseLook:
     XSensitivity: 2
@@ -293,33 +293,23 @@ MonoBehaviour:
     MaximumX: 90
     smooth: 0
     smoothTime: 5
-  m_UseFovKick: 1
+  m_UseFovKick: 0
   m_FovKick:
-    Camera: {fileID: 0}
+    Camera: {fileID: 2043778}
     originalFov: 0
     FOVIncrease: 3
     TimeToIncrease: 1
     TimeToDecrease: 1
     IncreaseCurve:
       serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: 1
-        value: 1
-        inSlope: 2
-        outSlope: 2
-        tangentMode: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  m_UseHeadBob: 1
+  m_UseHeadBob: 0
   m_HeadBob:
-    HorizontalBobRange: 0.1
-    VerticalBobRange: 0.1
+    HorizontalBobRange: 0.33
+    VerticalBobRange: 0.33
     Bobcurve:
       serializedVersion: 2
       m_Curve:
@@ -351,14 +341,16 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    VerticaltoHorizontalRatio: 2
+    VerticaltoHorizontalRatio: 1
   m_JumpBob:
-    BobDuration: 0.2
-    BobAmount: 0.1
-  m_StepInterval: 1
+    BobDuration: 0
+    BobAmount: 0
+  m_StepInterval: 0
   m_FootstepSounds:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  - {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
+  - {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
   m_JumpSound: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   m_LandSound: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
 --- !u!143 &14329984
@@ -386,9 +378,65 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: m_FootstepSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_StepInterval
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_WalkSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RunSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_JumpSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FovKick.Camera
+      value: 
+      objectReference: {fileID: 2043778}
+    - target: {fileID: 0}
+      propertyPath: m_StickToGroundForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityMultiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FootstepSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_FootstepSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_FootstepSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_FootstepSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: e9714160ce34f2b4ab63ff8c27bd68e1, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_JumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LandSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 194844}

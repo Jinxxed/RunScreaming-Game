@@ -21,6 +21,10 @@ public class Maze : MonoBehaviour
     public MazePassage passagePrefab;
     public MazeWall wallPrefab;
 
+    public Enemy enemyPrefab;
+
+    private Enemy[] enemies;
+
     private MazeCell[,] cells;
 
     private MazeCell start;
@@ -82,7 +86,52 @@ public class Maze : MonoBehaviour
         goalObj.transform.localPosition = goal.transform.localPosition + 0.6f * Vector3.up;
 
         goal.setGoal();
+        goal.gameObject.tag = "Goal";
 
+        this.enemies = new Enemy[1];
+
+        LinkedList<MazeCell> path2 = new LinkedList<MazeCell>();
+        path2.AddLast(start);
+
+        this.generateEnemy(path2);
+
+        Debug.Log("Spawned Enemy!");
+        }
+
+
+    private int generateEnemy(LinkedList<MazeCell> startPath)
+    {
+        MazeCell activeCell = startPath.First.Value;
+
+       
+
+        if(startPath.Count > 10)
+        {
+            this.enemies[0] = Instantiate(this.enemyPrefab) as Enemy;
+
+            this.enemies[0].setPath(startPath);
+
+            this.enemies[0].gameObject.transform.localPosition = activeCell.gameObject.transform.localPosition + 0.6f * Vector3.up;
+            return 0;
+        }
+
+        for (int i = 0; i < MazeDirections.Count; i++)
+            if (!(activeCell.GetEdge((MazeDirection)i) is MazeWall))
+            {
+                LinkedList<MazeCell> newPath = new LinkedList<MazeCell>(startPath);
+
+                if(startPath.Contains(activeCell.GetEdge((MazeDirection)i).otherCell))
+                {
+                    continue;
+                }
+                newPath.AddFirst(activeCell.GetEdge((MazeDirection)i).otherCell);
+                int success = generateEnemy(newPath);
+                if(success == 0)
+                {
+                    return 0;
+                }
+            }
+        return -1;
     }
 
     private void DoFirstGenerationStep(List<MazeCell> activeCells)
@@ -92,7 +141,7 @@ public class Maze : MonoBehaviour
 
     public MazeCell calculatePaths(MazeCell activeCell, LinkedList<MazeCell> path)
     {
-        if (path.Count > 5 * size.x)
+        if (path.Count > 50)
         {
             Debug.Log("Goal Calculated!");
             Debug.Log("Calculated path contains " + (path.Count + 1) + " tiles");
