@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
             
             this.GetComponent<Rigidbody>().AddForce(move * speed);
 
-            if ((this.transform.localPosition - newPosition).magnitude < 0.2f)
+            if (move.magnitude < 0.2f)
             {
                 this.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 path.RemoveFirst();
