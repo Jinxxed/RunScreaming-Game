@@ -402,8 +402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsWalking: 1
-  m_WalkSpeed: 1
-  m_RunSpeed: 2
+  m_WalkSpeed: 0.4
+  m_RunSpeed: 1.2
   m_RunstepLenghten: 0
   m_JumpSpeed: 1
   m_StickToGroundForce: 5
@@ -526,11 +526,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_WalkSpeed
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_RunSpeed
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_JumpSpeed

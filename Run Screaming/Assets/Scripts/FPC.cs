@@ -6,6 +6,7 @@ using System.Text;
 
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FPC :  FirstPersonController
     {
@@ -37,8 +38,13 @@ public new void Update()
         if (other.gameObject.CompareTag("Goal"))
         {
             Debug.Log("hit Goal");
+            SceneManager.LoadScene("win");
         }
-      
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("hit Enemy");
+            SceneManager.LoadScene("lose");
+        }
        
     }
 }
