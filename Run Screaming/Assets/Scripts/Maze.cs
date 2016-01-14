@@ -33,10 +33,7 @@ public class Maze : MonoBehaviour
 
     private MazeCell start;
 
-    public void disableGoalObj()
-    {
-        this.goalObj.SetActive(false);
-    }
+
 
     public IntVector2 RandomCoordinates
     {
@@ -83,8 +80,7 @@ public class Maze : MonoBehaviour
             goal = calculatePaths(start, path);
         }
 
-        fpcObj = Instantiate(fpcPrefab) as FirstPersonController;
-        fpcObj.transform.localPosition = start.transform.localPosition;
+
 
         goalObj = Instantiate(goalPrefab) as GameObject;
         goalObj.transform.localPosition = goal.transform.localPosition + 0.6f * Vector3.up;
@@ -103,13 +99,13 @@ public class Maze : MonoBehaviour
 
         deco = new LinkedList<GameObject>();
 
-        for(int i = 0; i < 80;i++)
+        for (int i = 0; i < 80; i++)
         {
             int j = (int)(Random.value * decorationPrefabs.Length * 0.99f);
 
             MazeCell spwanpoint = this.GetCell(this.RandomCoordinates);
 
-            if(spwanpoint == start)
+            if (spwanpoint == start)
             {
                 continue;
             }
@@ -121,15 +117,15 @@ public class Maze : MonoBehaviour
 
     public void prePareForScreenshot()
     {
-        foreach(GameObject go in deco)
+        foreach (GameObject go in deco)
         {
             go.transform.localScale = go.transform.localScale * 5;
         }
 
-        foreach(Light l in FindObjectsOfType<Light>())
+        foreach (Light l in FindObjectsOfType<Light>())
         {
             l.shadows = LightShadows.None;
-            if(l.type == LightType.Spot)
+            if (l.type == LightType.Spot)
             {
                 l.intensity = 2.5f;
                 l.range = 5f;
@@ -146,12 +142,16 @@ public class Maze : MonoBehaviour
 
         foreach (Light l in FindObjectsOfType<Light>())
         {
-            l.shadows = LightShadows.Soft;
+            l.shadows = LightShadows.Hard;
             if (l.type == LightType.Spot)
             {
                 l.intensity = 5;
             }
         }
+        fpcObj = Instantiate(fpcPrefab) as FirstPersonController;
+        fpcObj.transform.localPosition = start.transform.localPosition;
+
+        this.goalObj.GetComponent<MeshRenderer>().enabled = false;
     }
 
 
@@ -160,9 +160,9 @@ public class Maze : MonoBehaviour
     {
         MazeCell activeCell = startPath.First.Value;
 
-       
 
-        if(startPath.Count > 10)
+
+        if (startPath.Count > 10)
         {
             this.enemies[0] = Instantiate(this.enemyPrefab) as Enemy;
 
@@ -177,13 +177,13 @@ public class Maze : MonoBehaviour
             {
                 LinkedList<MazeCell> newPath = new LinkedList<MazeCell>(startPath);
 
-                if(startPath.Contains(activeCell.GetEdge((MazeDirection)i).otherCell))
+                if (startPath.Contains(activeCell.GetEdge((MazeDirection)i).otherCell))
                 {
                     continue;
                 }
                 newPath.AddFirst(activeCell.GetEdge((MazeDirection)i).otherCell);
                 int success = generateEnemy(newPath);
-                if(success == 0)
+                if (success == 0)
                 {
                     return 0;
                 }
@@ -243,9 +243,9 @@ public class Maze : MonoBehaviour
                 activeCells.Add(neighbor);
             }
             else {
-                if(Random.value < 0.85)
+                if (Random.value < 0.85)
                 {
-                    
+
                     CreateWall(currentCell, neighbor, direction);
                 }
                 else
@@ -253,7 +253,7 @@ public class Maze : MonoBehaviour
                     Debug.Log("No Wall");
                     CreatePassage(currentCell, neighbor, direction);
                 }
-                
+
             }
         }
         else {
