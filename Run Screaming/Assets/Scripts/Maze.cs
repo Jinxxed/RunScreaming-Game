@@ -21,7 +21,9 @@ public class Maze : MonoBehaviour
     public MazePassage passagePrefab;
     public MazeWall wallPrefab;
 
-    public GameObject[] decoration;
+    public GameObject[] decorationPrefabs;
+
+    private LinkedList<GameObject> deco;
 
     public Enemy enemyPrefab;
 
@@ -99,19 +101,59 @@ public class Maze : MonoBehaviour
 
         Debug.Log("Spawned Enemy!");*/
 
+        deco = new LinkedList<GameObject>();
+
         for(int i = 0; i < 80;i++)
         {
-            int j = (int)(Random.value * decoration.Length);
+            int j = (int)(Random.value * decorationPrefabs.Length * 0.99f);
+
             MazeCell spwanpoint = this.GetCell(this.RandomCoordinates);
 
             if(spwanpoint == start)
             {
                 continue;
             }
-            GameObject obj = Instantiate(decoration[j]) as GameObject;
-            obj.transform.localPosition = spwanpoint.transform.localPosition + Random.value * 0.5f * Vector3.left + Random.value * 0.5f * Vector3.back + Random.value * 0.5f * Vector3.forward + Random.value * 0.5f * Vector3.right;
+            deco.AddLast(Instantiate(decorationPrefabs[j]) as GameObject);
+            deco.Last.Value.transform.localPosition = spwanpoint.transform.localPosition + Random.value * 0.5f * Vector3.left + Random.value * 0.5f * Vector3.back + Random.value * 0.5f * Vector3.forward + Random.value * 0.5f * Vector3.right;
+            deco.Last.Value.transform.localRotation = Quaternion.AngleAxis(Random.value * 360, Vector3.up);
         }
     }
+
+    public void prePareForScreenshot()
+    {
+        foreach(GameObject go in deco)
+        {
+            go.transform.localScale = go.transform.localScale * 5;
+        }
+
+        foreach(Light l in FindObjectsOfType<Light>())
+        {
+            l.shadows = LightShadows.None;
+            if(l.type == LightType.Spot)
+            {
+                l.intensity = 2.5f;
+                l.range = 5f;
+            }
+        }
+    }
+
+    public void prepareForGame()
+    {
+        foreach (GameObject go in deco)
+        {
+            go.transform.localScale = go.transform.localScale * 0.2f;
+        }
+
+        foreach (Light l in FindObjectsOfType<Light>())
+        {
+            l.shadows = LightShadows.Soft;
+            if (l.type == LightType.Spot)
+            {
+                l.intensity = 5;
+            }
+        }
+    }
+
 
 
     private int generateEnemy(LinkedList<MazeCell> startPath)

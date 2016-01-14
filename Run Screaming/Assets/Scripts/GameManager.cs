@@ -82,8 +82,9 @@ public class GameManager : MonoBehaviour
     {
         mazeInstance = Instantiate(mazePrefab) as Maze;
         mazeInstance.Generate();
+        mazeInstance.prePareForScreenshot();
         takeScreenshot();
-        mazeInstance.disableGoalObj();
+        mazeInstance.prepareForGame();
     }
 
     private void RestartGame()

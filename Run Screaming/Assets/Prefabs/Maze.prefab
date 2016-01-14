@@ -48,7 +48,7 @@ MonoBehaviour:
   generationStepDelay: 0
   passagePrefab: {fileID: 11400000, guid: 4db582300649e4e399ee4a2665f9e8e6, type: 2}
   wallPrefab: {fileID: 11400000, guid: 2970089c471ef4c599835c1992954af5, type: 2}
-  decoration:
+  decorationPrefabs:
   - {fileID: 141590, guid: 5cf5a6c34a6d54d4a9513582942463d4, type: 2}
   - {fileID: 160724, guid: cbb66fff65933d84eafa6560931ff23b, type: 2}
   enemyPrefab: {fileID: 0}
@@ -61,6 +61,10 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: decoration.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: decorationPrefabs.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
@@ -95,6 +99,14 @@ Prefab:
       objectReference: {fileID: 141590, guid: 5cf5a6c34a6d54d4a9513582942463d4, type: 2}
     - target: {fileID: 0}
       propertyPath: decoration.Array.data[1]
+      value: 
+      objectReference: {fileID: 160724, guid: cbb66fff65933d84eafa6560931ff23b, type: 2}
+    - target: {fileID: 0}
+      propertyPath: decorationPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 141590, guid: 5cf5a6c34a6d54d4a9513582942463d4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: decorationPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 160724, guid: cbb66fff65933d84eafa6560931ff23b, type: 2}
     m_RemovedComponents: []
