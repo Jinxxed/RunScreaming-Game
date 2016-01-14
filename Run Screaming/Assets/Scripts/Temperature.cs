@@ -22,9 +22,9 @@ public class Temperature : MonoBehaviour
     {
 
 
-            float newTemperature = temperature + (timer / threashold);
+            int newTemperature = temperature + (int)(timer / threashold);
             GUI.Label(new Rect(20, 20, 200, 100),
-                                    "Beer temperature: " + newTemperature);
+                                    "Beer temperature: " + newTemperature + "°C");
         
 
         if (newTemperature > 15)
