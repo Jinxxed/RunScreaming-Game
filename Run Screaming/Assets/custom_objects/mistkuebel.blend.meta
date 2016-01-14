@@ -4,7 +4,31 @@ timeCreated: 1452768633
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: deckel
+    100002: kuebel
+    100004: //RootNode
+    100006: sprossen
+    100008: stange
+    400000: deckel
+    400002: kuebel
+    400004: //RootNode
+    400006: sprossen
+    400008: stange
+    2300000: deckel
+    2300002: kuebel
+    2300004: sprossen
+    2300006: stange
+    3300000: deckel
+    3300002: kuebel
+    3300004: sprossen
+    3300006: stange
+    4300000: deckel
+    4300002: kuebel
+    4300004: sprossen
+    4300006: stange
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
