@@ -21,6 +21,8 @@ public class Maze : MonoBehaviour
     public MazePassage passagePrefab;
     public MazeWall wallPrefab;
 
+    public GameObject[] decoration;
+
     public Enemy enemyPrefab;
 
     private Enemy[] enemies;
@@ -88,15 +90,28 @@ public class Maze : MonoBehaviour
         goal.setGoal();
         goal.gameObject.tag = "Goal";
 
-        this.enemies = new Enemy[1];
+        /*this.enemies = new Enemy[1];
 
         LinkedList<MazeCell> path2 = new LinkedList<MazeCell>();
         path2.AddLast(start);
 
         this.generateEnemy(path2);
 
-        Debug.Log("Spawned Enemy!");
+        Debug.Log("Spawned Enemy!");*/
+
+        for(int i = 0; i < 80;i++)
+        {
+            int j = (int)(Random.value * decoration.Length);
+            MazeCell spwanpoint = this.GetCell(this.RandomCoordinates);
+
+            if(spwanpoint == start)
+            {
+                continue;
+            }
+            GameObject obj = Instantiate(decoration[j]) as GameObject;
+            obj.transform.localPosition = spwanpoint.transform.localPosition + Random.value * 0.5f * Vector3.left + Random.value * 0.5f * Vector3.back + Random.value * 0.5f * Vector3.forward + Random.value * 0.5f * Vector3.right;
         }
+    }
 
 
     private int generateEnemy(LinkedList<MazeCell> startPath)
