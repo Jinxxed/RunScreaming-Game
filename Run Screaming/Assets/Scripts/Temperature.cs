@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 public class Temperature : MonoBehaviour
 {
     float timer = 0;
-    float end = 180;
+    float end = 60;
     int temperature = 7;
-    int threashold = 10;
+    int threashold = 15;
 
     void Start()
     {
@@ -20,15 +20,16 @@ public class Temperature : MonoBehaviour
 
     void OnGUI()
     {
-        if (timer >= end)
-        {
-            SceneManager.LoadScene("lose");
-        }
-        else
-        {
-            int newTemperature = temperature + ((int)timer / threashold);
+
+
+            float newTemperature = temperature + (timer / threashold);
             GUI.Label(new Rect(20, 20, 200, 100),
                                     "Beer temperature: " + newTemperature);
+        
+
+        if (newTemperature > 15)
+        {
+            SceneManager.LoadScene("lose");
         }
     }
 }
