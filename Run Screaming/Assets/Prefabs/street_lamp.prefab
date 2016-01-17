@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &136302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 421702}
+  - 33: {fileID: 3323962}
+  - 64: {fileID: 6480670}
+  - 23: {fileID: 2396604}
+  m_Layer: 0
+  m_Name: legend
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &144104
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +61,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 430252}
   - 95: {fileID: 9561868}
+  - 65: {fileID: 6501948}
   m_Layer: 0
   m_Name: street_lamp
   m_TagString: Untagged
@@ -78,6 +97,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 430252}
   m_RootOrder: 1
+--- !u!4 &421702
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136302}
+  m_LocalRotation: {x: 0, y: -0.88861734, z: 0, w: 0.4586494}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalScale: {x: 0.66, y: 0.011, z: 0.66}
+  m_Children: []
+  m_Father: {fileID: 430252}
+  m_RootOrder: 3
 --- !u!4 &429328
 Transform:
   m_ObjectHideFlags: 1
@@ -96,13 +127,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 160724}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: 14.654807, y: 0, z: 50.704773}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalRotation: {x: 0, y: -0.45779637, z: 0, w: 0.8890571}
+  m_LocalPosition: {x: -9.348043, y: 0.002, z: 7.9714174}
+  m_LocalScale: {x: 0.15000002, y: 0.15, z: 0.14999999}
   m_Children:
   - {fileID: 429328}
   - {fileID: 421044}
   - {fileID: 437606}
+  - {fileID: 421702}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &437606
@@ -169,6 +201,39 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!23 &2396604
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136302}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 7d41d8dda41703a438c8f94f51c97795, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &3323962
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136302}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &3335028
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -183,6 +248,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144104}
   m_Mesh: {fileID: 4300000, guid: da82ae1f11370fe4682065c5c463fe80, type: 3}
+--- !u!64 &6480670
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &6501948
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 12.55, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9561868
 Animator:
   serializedVersion: 3
@@ -210,9 +299,9 @@ Light:
   serializedVersion: 6
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8
+  m_Intensity: 0.96
   m_Range: 10
-  m_SpotAngle: 100
+  m_SpotAngle: 111.7
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0

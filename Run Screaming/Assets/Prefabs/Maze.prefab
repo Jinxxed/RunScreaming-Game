@@ -47,7 +47,7 @@ MonoBehaviour:
   fpcPrefab: {fileID: 11447298, guid: dc26b962efd831c499e38d6897fd5e29, type: 2}
   generationStepDelay: 0
   passagePrefab: {fileID: 11400000, guid: 4db582300649e4e399ee4a2665f9e8e6, type: 2}
-  wallPrefab: {fileID: 11400000, guid: 2970089c471ef4c599835c1992954af5, type: 2}
+  wallPrefab: {fileID: 11449406, guid: 137ad0f1fc6879349940288c16415069, type: 2}
   decorationPrefabs:
   - {fileID: 141590, guid: 5cf5a6c34a6d54d4a9513582942463d4, type: 2}
   - {fileID: 160724, guid: cbb66fff65933d84eafa6560931ff23b, type: 2}
@@ -109,6 +109,11 @@ Prefab:
       propertyPath: decorationPrefabs.Array.data[1]
       value: 
       objectReference: {fileID: 160724, guid: cbb66fff65933d84eafa6560931ff23b, type: 2}
+    - target: {fileID: 0}
+      propertyPath: wallPrefab
+      value: 
+      objectReference: {fileID: 11449406, guid: 137ad0f1fc6879349940288c16415069,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100000}

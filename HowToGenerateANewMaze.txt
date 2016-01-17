@@ -1,0 +1,15 @@
+HOW 2 GENERATE A MAZE:
+
+1) duplicate "static_maze_0.unity", rename new scene.
+2) Open "maze_generator.unity"
+3) Click the "play" button
+4) Not happy with generated maze? step 3 again!
+5) While game is running, switch to "scene" mode and COPY
+*"Maze(Clone)"
+6) Open duplicated scene and replace "Maze(Clone)" with you copied maze.
+7) Move the objects around, you can also add some more objects. (prefabs!)
+8a) Move "Goal(Clone)" to  a reasonable place. (=edge, because why should the exit be in the middle of the maze?)
+8b) Remove wall at exit, so that player1 can see the exit as well.
+9) Check generated Screenshots (/Assets/mazePlots/*.png) 
+10) test!
+11) save scene and push everything to our git repo
