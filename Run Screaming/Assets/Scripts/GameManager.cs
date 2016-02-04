@@ -9,11 +9,14 @@ public class GameManager : MonoBehaviour
 
     private void takeScreenshot(string filename)
     {
+
+
         int width = 800;
         int height = 800;
 
-        mainCamera.pixelRect = new Rect(0, 0, width, height);
+        //mainCamera.pixelRect = new Rect(0, 0, width, height);
         RenderTexture rt = new RenderTexture(width, height, 24);
+        mainCamera.backgroundColor = Color.white;
 
         mainCamera.targetTexture = rt;
 
@@ -27,12 +30,22 @@ public class GameManager : MonoBehaviour
 
         byte[] bytes = screen.EncodeToPNG();
 
-        string fullFilename = Application.dataPath + "/mazePlots/" + filename + ".png";
 
+        RenderTexture.active = null;
+
+        string fullFilename = Application.dataPath + "/mazePlots/" + filename + ".png";
+        
         if (Application.platform != RuntimePlatform.WebGLPlayer)
+        {
+
+            System.IO.File.Delete(fullFilename);
             System.IO.File.WriteAllBytes(fullFilename, bytes);
+        }
+        
+        
 
         Debug.Log("Created Maze Plot '" + filename + "', saved it to " + fullFilename);
+
     }
 
     private void Start()
@@ -81,7 +94,7 @@ public class GameManager : MonoBehaviour
         float xPos = ((int) UnityEngine.Random.Range(-10, 9)) + 0.5f;
         float yPos = ((int) UnityEngine.Random.Range(-10, 9)) + 0.5f;
 
-        fpc.transform.position = new Vector3(xPos, 0, yPos);
+        fpc.transform.position = new Vector3(xPos, 1, yPos);
 
 
         #region PLOTS
@@ -105,6 +118,8 @@ public class GameManager : MonoBehaviour
 
         //change y position of grid, so that it is visible
         grid.transform.position = new Vector3(0, 0, 0);
+
+
 
         //show maze only
         decoObjects.SetActive(false);

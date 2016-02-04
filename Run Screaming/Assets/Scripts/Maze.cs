@@ -83,7 +83,7 @@ public class Maze : MonoBehaviour
 
 
         goalObj = Instantiate(goalPrefab) as GameObject;
-        goalObj.transform.localPosition = goal.transform.localPosition + 0.6f * Vector3.up;
+        goalObj.transform.localPosition = goal.transform.localPosition + 2 * Vector3.up;
 
         goal.setGoal();
         goal.gameObject.tag = "Goal";
@@ -155,7 +155,7 @@ public class Maze : MonoBehaviour
             }
         }
         fpcObj = Instantiate(fpcPrefab) as FirstPersonController;
-        fpcObj.transform.localPosition = start.transform.localPosition;
+        fpcObj.transform.localPosition = start.transform.localPosition + 2*Vector3.up;
 
         this.goalObj.GetComponent<MeshRenderer>().enabled = false;
     }
