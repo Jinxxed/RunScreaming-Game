@@ -28,7 +28,9 @@ public class GameManager : MonoBehaviour
         byte[] bytes = screen.EncodeToPNG();
 
         string fullFilename = Application.dataPath + "/mazePlots/" + filename + ".png";
-        System.IO.File.WriteAllBytes(fullFilename, bytes);
+
+        if (Application.platform != RuntimePlatform.WebGLPlayer)
+            System.IO.File.WriteAllBytes(fullFilename, bytes);
 
         Debug.Log("Created Maze Plot '" + filename + "', saved it to " + fullFilename);
     }
