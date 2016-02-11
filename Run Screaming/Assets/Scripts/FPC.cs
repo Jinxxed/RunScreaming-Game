@@ -22,8 +22,8 @@ public class FPC : FirstPersonController
         this.gameObject.transform.rotation.ToAngleAxis(out angle, out look);
 
 
-        Debug.Log(look);
-        Debug.Log(angle);
+        //Debug.Log(look);
+        //Debug.Log(angle);
         if(look.y < 0)
         {
             compass.rectTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
