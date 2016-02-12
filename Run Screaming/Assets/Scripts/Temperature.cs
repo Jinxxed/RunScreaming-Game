@@ -9,30 +9,38 @@ public class Temperature : MonoBehaviour
     public Sprite[] temperature_levels;
 
     float timer = 0;
-    float end = 15;
-    int temperature = 7;
-    int threashold = 15;
+    float end = 180;
     int state = 0;
 
     void Start()
     {
         base_temperature_background.GetComponent<CanvasRenderer>().SetAlpha(0.25f);
     }
- 
+
     void Update()
     {
         timer += Time.deltaTime;
+
+        if (timer > 150)
+        {
+            state = 5;
+        } else if (timer > 120) {
+            state = 4;
+        } else if (timer > 90)
+        {
+            state = 3;
+        } else if (timer > 60) {
+            state = 2;
+        } else if (timer > 30)
+        {
+            state = 1;
+        }
+        
     }
 
     void OnGUI()
     {
-        //TODO change the current_temperature image to next level...
-
-            float newTemperature = temperature + (timer / threashold);
-            GUI.Label(new Rect(20, 20, 200, 100),
-                                    string.Format("Beer temperature: {0,4:F2}°C",newTemperature));
-
-        state = 2;
+        //TODO change the current_temperature image to next level
 
         Sprite spr = temperature_levels[state];
         current_temperature.sprite = spr;
@@ -40,22 +48,19 @@ public class Temperature : MonoBehaviour
         switch(state)
         {
             case 1:
-                new_size = new Vector2(25, 40);
+                new_size = new Vector2(25, 37);
                 break;
             case 2:
-                new_size = new Vector2(25, 50);
+                new_size = new Vector2(25, 52);
                 break;
             case 3:
-                new_size = new Vector2(25, 60);
+                new_size = new Vector2(25, 68);
                 break;
             case 4:
-                new_size = new Vector2(25, 60);
+                new_size = new Vector2(25, 83);
                 break;
             case 5:
-                new_size = new Vector2(25, 60);
-                break;
-            case 6:
-                new_size = new Vector2(25, 60);
+                new_size = new Vector2(25, 100);
                 break;
             default:
                 new_size = new Vector2(25, 20);
@@ -63,10 +68,7 @@ public class Temperature : MonoBehaviour
     }
         current_temperature.rectTransform.sizeDelta = new_size;
 
-
-
-
-        if (newTemperature > end)
+        if (timer > end)
         {
             SceneManager.LoadScene("lose");
         }
