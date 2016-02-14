@@ -10,4 +10,9 @@ public class MenuController : MonoBehaviour {
     {
         SceneManager.LoadScene(maze);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
