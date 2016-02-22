@@ -191,7 +191,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -246, y: 229}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280521922
@@ -227,13 +227,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Help! Your party is running out of cold beer! And your friends agree: You
-    are the chosen one, chosen to save the night. But now you are on the other side
-    of the city, with the desired crate of beer, but lost in chaos and disorientation.
-    To run fast and not get lost at the same time is impossible. And worst of all:
-    the beer is getting warm! In order to reach the party on time, help is needed!
-    Luckily, the party society is at hand via phone to guide you \u2026 back to the
-    party \u2026 to deliver the (hopefully still cold) beer \u2026 and save the night!"
+  m_Text: "Help! Your party is running out of cold beer! \n\nAnd your friends agree:
+    You are the chosen one, \nchosen to save the night. \n\nBut now you are on the
+    other side of the city, \nwith the desired crate of beer, \nbut lost in chaos
+    and disorientation. \nTo run fast and not get lost at the same time is impossible.
+    \n\nAnd worst of all: the beer is getting warm! \nIn order to reach the party
+    on time, \nhelp is needed! \n\nLuckily, the party society is at hand via phone
+    to \nguide you back to the party \u2026 \nto deliver the (hopefully still cold)
+    beer \u2026 \nand save the night!"
 --- !u!222 &280521923
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -406,10 +407,10 @@ RectTransform:
   - {fileID: 1205331718}
   m_Father: {fileID: 1492929154}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 400}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -380, y: 9}
+  m_SizeDelta: {x: 700, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &859176393
 GameObject:
