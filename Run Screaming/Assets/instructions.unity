@@ -216,18 +216,24 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: de38026a41105c9468f8fb6093ae49f9, type: 3}
-    m_FontSize: 32
+    m_FontSize: 21
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Instructions...
+  m_Text: "Help! Your party is running out of cold beer! And your friends agree: You
+    are the chosen one, chosen to save the night. But now you are on the other side
+    of the city, with the desired crate of beer, but lost in chaos and disorientation.
+    To run fast and not get lost at the same time is impossible. And worst of all:
+    the beer is getting warm! In order to reach the party on time, help is needed!
+    Luckily, the party society is at hand via phone to guide you \u2026 back to the
+    party \u2026 to deliver the (hopefully still cold) beer \u2026 and save the night!"
 --- !u!222 &280521923
 CanvasRenderer:
   m_ObjectHideFlags: 0
