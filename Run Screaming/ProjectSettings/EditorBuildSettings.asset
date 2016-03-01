@@ -10,6 +10,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/maze/static_maze_0.unity
   - enabled: 1
+    path: Assets/maze/static_maze_1.unity
+  - enabled: 1
+    path: Assets/maze/static_maze_2.unity
+  - enabled: 1
     path: Assets/Win.unity
   - enabled: 1
     path: Assets/Lose.unity
