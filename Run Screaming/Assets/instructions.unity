@@ -227,14 +227,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Help! Your party is running out of cold beer! \n\nAnd your friends agree:
+  m_Text: "Help! Your party is running out of cold mate! \n\nAnd your friends agree:
     You are the chosen one, \nchosen to save the night. \n\nBut now you are on the
-    other side of the city, \nwith the desired crate of beer, \nbut lost in chaos
+    other side of the city, \nwith the desired crate of mate, \nbut lost in chaos
     and disorientation. \nTo run fast and not get lost at the same time is impossible.
-    \n\nAnd worst of all: the beer is getting warm! \nIn order to reach the party
+    \n\nAnd worst of all: the mate is getting warm! \nIn order to reach the party
     on time, \nhelp is needed! \n\nLuckily, the party society is at hand via phone
     to \nguide you back to the party \u2026 \nto deliver the (hopefully still cold)
-    beer \u2026 \nand save the night!"
+    mate \u2026 \nand save the night!"
 --- !u!222 &280521923
 CanvasRenderer:
   m_ObjectHideFlags: 0
