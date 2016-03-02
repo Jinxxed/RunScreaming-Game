@@ -9,7 +9,7 @@ public class Temperature : MonoBehaviour
     public Sprite[] temperature_levels;
 
     float timer = 0;
-    float end = 180;
+    float end = 360;
     int state = 0;
 
     void Start()
@@ -21,17 +21,17 @@ public class Temperature : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 150)
+        if (timer > 300)
         {
             state = 5;
-        } else if (timer > 120) {
+        } else if (timer > 240) {
             state = 4;
-        } else if (timer > 90)
+        } else if (timer > 180)
         {
             state = 3;
-        } else if (timer > 60) {
+        } else if (timer > 120) {
             state = 2;
-        } else if (timer > 30)
+        } else if (timer > 60)
         {
             state = 1;
         }
