@@ -151,7 +151,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Next -->
+  m_Text: OK, got it
 --- !u!222 &15879254
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -227,14 +227,37 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Help! Your party is running out of cold mate! \n\nAnd your friends agree:
-    You are the chosen one, \nchosen to save the night. \n\nBut now you are on the
-    other side of the city, \nwith the desired crate of mate, \nbut lost in chaos
-    and disorientation. \nTo run fast and not get lost at the same time is impossible.
-    \n\nAnd worst of all: the mate is getting warm! \nIn order to reach the party
-    on time, \nhelp is needed! \n\nLuckily, the party society is at hand via phone
-    to \nguide you back to the party \u2026 \nto deliver the (hopefully still cold)
-    mate \u2026 \nand save the night!"
+  m_Text: 'You need at least 3 people to play this game.
+
+
+    Player 1
+
+    needs a computer and this game opened.
+
+
+    The other players
+
+    need the maps, either printed or on a second computer.
+
+
+    Player 1
+
+    needs to find an exit, and for the friends to help,
+
+    needs to describe the world on the screen.
+
+
+    The other players
+
+    need to find the location of player 1 in the map
+
+    and guide to an exit.
+
+
+    Landmarks like lamps and signs can help.
+
+
+    Good luck!'
 --- !u!222 &280521923
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -628,7 +651,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Instructions
+  m_Text: How To play
 --- !u!222 &1098328199
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -720,7 +743,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: instructions2
+          m_StringArgument: menu
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
