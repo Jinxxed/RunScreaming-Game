@@ -10,13 +10,17 @@
 
 * [ ] print of:
     - Title: Game + Who worked on this game (+ matr.nr)
-    - Your final Game Design Document
+    - Your final Game Design Document:
+        - RunScreaming-GameDesignDocument.pdf
 
 * [ ] CD containing:
     - [ ] the game source + exe
+        - code: https://github.com/RunScreaming/RunScreaming-Game/tree/master/Run%20Screaming 
+        - exe: https://github.com/RunScreaming/RunScreaming.github.io  
     - [ ] some screenshot files
     - [ ] a small video of the gameplay (ca 2 minutes)
     - [ ] the digital report
+        - RunScreaming-GameDesignDocument.pdf
 
 ## Mail
 
@@ -32,6 +36,9 @@
 - Link to playable version
 
 ```
+Hi,
+
+here are the details for Team-Zero's game:
 
 - Name: Run Screaming
 - Video: TODO
