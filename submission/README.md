@@ -41,7 +41,7 @@ Hi,
 here are the details for Team-Zero's game:
 
 - Name: Run Screaming
-- Video: TODO
+- Video: https://www.youtube.com/watch?v=5ozzBPO030w
 - Screenshots: attached
 - Technologies:
 -- Unity3d
@@ -71,5 +71,5 @@ Cheers
 
 ## Bonus
 
-* [ ] website
+* [x] website
     * [ ] pdf?
