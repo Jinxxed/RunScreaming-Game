@@ -3,28 +3,28 @@
 ## Presentation
 
 * Each group gets a presentation slot of 5 minutes! 
-* [ ] This should include some slides (what technology did you use, future work,..) 
-* [ ] a short game demo / video
+* [x] This should include some slides (what technology did you use, future work,..) 
+* [x] a short game demo / video:  https://www.youtube.com/watch?v=5ozzBPO030w
 
 ## Hand-in
 
-* [ ] print of:
+* [x] print of:
     - Title: Game + Who worked on this game (+ matr.nr)
     - Your final Game Design Document:
         - RunScreaming-GameDesignDocument.pdf
 
-* [ ] CD containing:
-    - [ ] the game source + exe
+* [x] CD containing:
+    - [x] the game source + exe
         - code: https://github.com/RunScreaming/RunScreaming-Game/tree/master/Run%20Screaming 
         - exe: https://github.com/RunScreaming/RunScreaming.github.io  
-    - [ ] some screenshot files
-    - [ ] a small video of the gameplay (ca 2 minutes)
-    - [ ] the digital report
+    - [x] some screenshot files
+    - [x] a small video of the gameplay (ca 2 minutes)
+    - [x] the digital report
         - RunScreaming-GameDesignDocument.pdf
 
 ## Mail
 
-* [ ] send the following info per mail, that we can feature your games on the website:
+* [x] send the following info per mail, that we can feature your games on the website:
 (such as on http://gamelabgraz.com/games/)
 
 - Name of the game
